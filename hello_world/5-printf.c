@@ -1,11 +1,12 @@
 #include <stdio.h>
 
-/*
- *la funcion de este codigo
- *es printear una oracion usando printf en int main
+/**
+ * main - function will print sentence using print f
+ * Return: if 0 means succesfull completion.
  */
 
 int main(void)
+
 {
 	printf("with proper grammar, but the outcome is a piece of art,\n");
 
