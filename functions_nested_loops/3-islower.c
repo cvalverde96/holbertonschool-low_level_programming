@@ -4,7 +4,7 @@
  * _islower - va validar si variable c es mayor
  * o igual a, y si c es igual o menor a zeta
  * mientras tanto esto sea cierto programa correra
- * sino devolvera 0
+ * @c: will take in the value provided in main sino devolvera 0
  * Return: 0 significa completado
  */
 
