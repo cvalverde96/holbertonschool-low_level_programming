@@ -1,11 +1,10 @@
 #include "main.h"
 /**
- * print_number - printea numeros
- * times_table - psrintea numeros
- *
- * @n: variable de main
- * Return: 0
+ * times_table - printea
+ * @n: valor de main
+ * print_number: imprmiendo numeros
  */
+
 
 void print_number(int n);
 
@@ -34,6 +33,11 @@ void times_table(void)
 		_putchar('\n');
 	}
 }
+
+/**
+ * print_number - prinetano numero
+ * @n: main
+ */
 
 void print_number(int n)
 {
