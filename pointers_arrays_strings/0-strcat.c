@@ -18,7 +18,6 @@ char *_strcat(char *dest, char *src)
 	{
 		lenDest++;
 	}
-	_putchar(lenDest);
 
 	while (src[lenSrc] != '\0')
 	{
