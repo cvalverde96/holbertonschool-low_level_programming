@@ -7,7 +7,7 @@
  * Return: dest va devlver el cpointer al string concatanetated
  */
 
-char *_strcat(char *dest, char *src)
+char* _strcat(char *dest, char *src)
 {
 	int lenDest, lenSrc;
 
