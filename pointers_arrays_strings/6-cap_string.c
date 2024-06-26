@@ -1,34 +1,52 @@
 #include "main.h"
 
 /**
- * cap_string - capitalize
- * @str: pointer
+ * cap_string - capitalizing
+ * @str: pointer de string
  * Return: string
  */
 
 char *cap_string(char *str)
 {
-	char *pointer = str;
-	int cap = 0;
-	char sep[] = " \t\n,;.!?\"(){}";
+	char *s = str;
+	char mapping[256] = {0};
+	char separators[] = " \t\n,;.!?\"(){}";
+	int capitalize_next = 1;
 
-	while (*pointer)
+	for (char c = 'a'; c <= 'z'; c++)
 	{
-		if (cap && *pointer >= 'a' && *pointer <= 'z')
-		{
-			*pointer -= ('a' - 'A');
-			cap = 0;
-		}
+		mapping[(unsigned char)c] = c - 'a' + 'A';
+	}
 
-		for (int i = 0; sep[i] != '\0'; i++)
+	while (*s)
+	{
+		for (int i = 0; separators[i] != '\0'; i++)
 		{
-			if (*pointer == sep[i])
+			if (*s == separators[i])
 			{
-				cap = 0;
+				capitalize_next = 1;
 				break;
 			}
 		}
-		pointer++;
+
+		if (capitalize_next && mapping[(unsigned char)*s])
+		{
+			*s = mapping[(unsigned char)*s];
+			capitalize_next = 0;
+		}
+		else if (!capitalize_next && mapping[(unsigned char)*s])
+		{
+			capitalize_next = 0;
+		}
+		else if (*s >= 'A' && *s <= 'Z')
+		{
+			capitalize_next = 0;
+		}
+		else if (*s >= '0' && *s <= '9')
+		{
+			capitalize_next = 0;
+		}
+		s++;
 	}
 	return (str);
 }
