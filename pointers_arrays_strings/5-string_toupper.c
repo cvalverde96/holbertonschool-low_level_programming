@@ -3,7 +3,7 @@
 /**
  * string_toupper - function que imprime string to upper
  * Return: variable uppercase
- * @'': pointer
+ * @str: pointer
  */
 
 char *string_toupper(char *str)
