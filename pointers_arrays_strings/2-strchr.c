@@ -1,0 +1,22 @@
+#include "main.h"
+
+/**
+ * _strchr - dsa
+ * @s: pointer s
+ * @c: characeter
+ * Return: s
+*/
+
+char *_strchr(char *s, char c)
+{
+
+	for (; *s != '\0'; s++)
+	{
+		if (*s == (char)c)
+		{
+			return (char *)s;
+		}
+	}
+
+	return (s);
+}
