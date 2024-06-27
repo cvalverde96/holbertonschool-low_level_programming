@@ -1,27 +1,25 @@
 #include "main.h"
 
 /**
- * _strcat - concatanets two strings
- * @dest: pointer
- * @src: pointer
- * Return: dest va devlver el cpointer al string concatanetated
  */
 
-char *_strcat(char *dest, char *src)
+char *_strncat(char *dest, char *src, int n)
 {
-	int dest_len = 0;
-	int i;
+	int length_dest = 0;
+	int length_src = 0;
 
-	while (dest[dest_len] != '\0')
+	while (dest[length_dest] != '\0')
 	{
-		dest_len++;
+		length_dest++;
 	}
 
-	for (i = 0; src[i] != '\0'; i++);
+	while (length_src < n && src[length_src] != '\0')
 	{
-		dest[dest_len + i] = src[i];
+		dest[length_dest + length_src] = src[length_src];
+		length_src++;
+
 	}
-	dest[dest_len + i] = '\0';
+	dest[length_dest + length_src] = '\0';
 
 	return (dest);
 }
