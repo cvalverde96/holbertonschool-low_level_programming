@@ -11,16 +11,22 @@
 
 char *_strpbrk(char *s, char *accept)
 {
-	while(*s)
-		if(_strchr(accept, *s++))
-			return (char*)--s;
+	while (*s)
+		if (_strchr(accept, *s++))
+			return ((char *) --s);
 	return (0);
 }
 
+/**
+ * _strchr - funcion
+ * @s: pointer
+ * @c: character
+ * Return: string
+ */
 char *_strchr(char *s, char c)
 {
 	while (*s != (char)c)
 		if (!*s++)
-			return 0;
-	return (char *)s;
+			return (0);
+	return ((char *)s);
 }
