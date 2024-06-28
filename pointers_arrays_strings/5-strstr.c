@@ -57,9 +57,10 @@ int _memcmp(const void *s1, const void *s2, int n)
 
 	while (n--)
 		if (*p1 != *p2)
+		{
 			return (*p1 - *p2);
-		else
-			p1++, p2++;
+		}
+	p1++, p2++;
 	return (0);
 }
 
