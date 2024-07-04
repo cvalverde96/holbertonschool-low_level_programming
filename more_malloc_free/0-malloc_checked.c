@@ -13,5 +13,10 @@ void *malloc_checked(unsigned int b)
 
 	ptr = malloc(sizeof(*ptr) * b);
 
+	if (ptr == NULL)
+	{
+		return (NULL);
+	}
+
 	return (ptr);
 }
