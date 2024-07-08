@@ -1,6 +1,9 @@
 #include <stdlib.h>
-#include <string.h>
 #include "dog.h"
+
+
+char *_strcpy(char *dest, char *src);
+int _strlen(char *s);
 
 /**
  * new_dog - funcion para crear un nuevo dogo
@@ -22,13 +25,13 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 
-	dog_name = malloc(strlen(name) + 1);
+	dog_name = malloc(_strlen(name) + 1);
 
-	strcpy(dog_name, name);
+	_strcpy(dog_name, name);
 
-	dog_owner = malloc(strlen(owner) + 1);
+	dog_owner = malloc(_strlen(owner) + 1);
 
-	strcpy(dog_owner, owner);
+	_strcpy(dog_owner, owner);
 
 	my_dog->name = name;
 	my_dog->age = age;
@@ -38,3 +41,44 @@ dog_t *new_dog(char *name, float age, char *owner)
 	return (my_dog);
 
 }
+
+/**
+ * _strlen - coge una variable y la imprime una por una
+ * @s: pointer de string
+ * Return: 0 es exito
+ */
+
+int _strlen(char *s)
+{
+	int len = 0;
+
+	while (s[len] != '\0')
+	{
+		len++;
+	}
+
+	return (len);
+}
+
+
+/**
+ * _strcpy - copiando string
+ * @dest: pointer var
+ * @src: pointer var
+ * Return: dest
+ */
+
+char *_strcpy(char *dest, char *src)
+{
+	int i = 0;
+
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+
+	return (dest);
+}
+
