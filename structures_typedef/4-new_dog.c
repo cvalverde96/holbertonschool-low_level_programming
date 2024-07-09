@@ -37,6 +37,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 	my_dog->age = age;
 	my_dog->owner = owner;
 
+	free(dog_name);
+	free(dog_owner);
+
 
 	return (my_dog);
 
