@@ -3,7 +3,6 @@
 
 
 char *_strcpy(char *dest, char *src);
-int _strlen(char *s);
 
 /**
  * new_dog - funcion para crear un nuevo dogo
@@ -16,7 +15,6 @@ int _strlen(char *s);
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *my_dog;
-	char *dog_name, *dog_owner;
 
 	my_dog = malloc(sizeof(dog_t));
 
@@ -25,53 +23,32 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 
-	dog_name = malloc(_strlen(name) + 1);
+	my_dog->name = malloc(sizeof(name) + 1);
 
-	if (dog_name == NULL)
+	if (my_dog->name == NULL)
 	{
 		free(my_dog);
 		return (NULL);
 	}
 
-	_strcpy(dog_name, name);
+	_strcpy(my_dog->name, name);
 
-	dog_owner = malloc(_strlen(owner) + 1);
-
-	if (dog_owner == NULL)
-	{
-		free(dog_name);
-		free(my_dog);
-		return (NULL);
-	}
-
-	_strcpy(dog_owner, owner);
-
-	my_dog->name = name;
 	my_dog->age = age;
-	my_dog->owner = owner;
+
+	my_dog->owner = malloc(sizeof(owner) + 1);
+
+	if (my_dog->owner == NULL)
+	{
+		free(my_dog->name);
+		free(my_dog);
+		return (NULL);
+	}
+
+	_strcpy(my_dog->owner, owner);
 
 	return (my_dog);
 
 }
-
-/**
- * _strlen - coge una variable y la imprime una por una
- * @s: pointer de string
- * Return: 0 es exito
- */
-
-int _strlen(char *s)
-{
-	int len = 0;
-
-	while (s[len] != '\0')
-	{
-		len++;
-	}
-
-	return (len);
-}
-
 
 /**
  * _strcpy - copiando string
