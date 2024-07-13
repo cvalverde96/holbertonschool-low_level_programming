@@ -11,11 +11,11 @@
 int main(int argc, char *argv[])
 {
 	int num1, num2, result;
-	char *oper;
+	char *o;
 
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
-	oper = argv[2];
+	o = argv[2];
 
 	if (argc != 4)
 	{
@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 		return (98);
 	}
 
-	if (oper[0] != '+' && oper[0] != '-' && oper[0] != '*' && oper[0] != '/' && oper[0] != '%')
+	if (o[0] != '+' && o[0] != '-' && o[0] != '*' && o[0] != '/' && o[0] != '%')
 	{
 		printf("Error 99\n");
 		return (99);
@@ -32,7 +32,8 @@ int main(int argc, char *argv[])
 	else
 	{
 		result = (get_op_func(argv[2])(num1, num2));
-		return (result);
+		printf("%d\n", result);
+		return (0);
 	}
 
 }
