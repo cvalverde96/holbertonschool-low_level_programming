@@ -11,14 +11,22 @@
 int main(int argc, char *argv[])
 {
 	int num1, num2, result;
+	char *oper;
 
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
+	oper = argv[2];
 
 	if (argc != 4)
 	{
 		printf("Error 98\n");
 		return (98);
+	}
+
+	if (oper[0] != '+' && oper[0] != '-' && oper[0] != '*' && oper[0] != '/' && oper[0] != '%')
+	{
+		printf("Error 99\n");
+		return (99);
 	}
 
 	else
