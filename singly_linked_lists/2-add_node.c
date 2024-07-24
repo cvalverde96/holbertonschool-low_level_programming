@@ -1,5 +1,19 @@
 #include "lists.h"
 
+
+
+int _strlen(const char *s)
+{
+	int len = 0;
+
+	while (s[len] != '\0')
+	{
+		len++;
+	}
+	return (len);
+}
+
+
 /**
  * add_node - funcion para anadir nodos al beginning
  * @head: pointer to pointer
@@ -19,7 +33,7 @@ list_t *add_node(list_t **head, const char *str)
 
 	new->str = strdup(str);
 	new->next = *head;
-	new->len = strlen(str);
+	new->len = _strlen(str);
 
 	*head = new;
 
