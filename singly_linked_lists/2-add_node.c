@@ -1,6 +1,10 @@
 #include "lists.h"
 
-
+/**
+ * _strlen - coge una variable y la imprime una por una
+ * @s: pointer de string
+ * Return: 0 es exito
+ */
 
 int _strlen(const char *s)
 {
@@ -29,7 +33,6 @@ list_t *add_node(list_t **head, const char *str)
 	{
 		return (NULL);
 	}
-	
 
 	new->str = strdup(str);
 	new->next = *head;
